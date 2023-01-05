@@ -1,6 +1,7 @@
 package com.onlineshopping.flipkart.controller;
 
 import com.onlineshopping.flipkart.entity.Shippers;
+import com.onlineshopping.flipkart.exceptions.ProductNotFoundException;
 import com.onlineshopping.flipkart.exceptions.ShipperNotFoundException;
 import com.onlineshopping.flipkart.service.ShipperService;
 import com.onlineshopping.flipkart.util.ValidList;
@@ -36,6 +37,10 @@ public class ShipperController {
     ResponseEntity<String> updateShippers(@RequestBody @Valid List<com.onlineshopping.flipkart.vo.Shipper> shippers) throws ShipperNotFoundException {
         shipperService.updateShippers(shippers);
         return new ResponseEntity<>(HttpStatus.OK);
-
+    }
+    @DeleteMapping("/{shipid}")
+    ResponseEntity<com.onlineshopping.flipkart.entity.Shippers> deleteShipperByShipid(@PathVariable Integer shipid) throws ShipperNotFoundException {
+        shipperService.deleteShipperById(shipid);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

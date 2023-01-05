@@ -52,4 +52,8 @@ public class ShipperService {
                 .shipperID(shippers.getShipperID())
                 .phone(shippers.getPhone()).build();
     }
+    public void  deleteShipperById(Integer shipid) {
+        shipperRepository.delete(shipperRepository.findById(shipid).orElseThrow(() -> new ShipperNotFoundException(shipid)));
+
+    }
 }

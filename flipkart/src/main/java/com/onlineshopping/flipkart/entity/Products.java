@@ -23,5 +23,7 @@ public class Products {
     private int productID;
     private int unit, price;
     private String productName;
+    @Column(name="product_image")
+    private String productImage;
 
 }

@@ -13,6 +13,8 @@ public class Products {
     @Min(value = 10, message = "Minimum price should be 10")
     private int price;
     private int supplierID;
-    @NotBlank(message = "Product Name can not be empty")
+    @NotBlank(message = "Product Name cannot be blank")
     private String productName;
+    @NotBlank(message = "Image link cannot be blank")
+    private String productImage;
 }

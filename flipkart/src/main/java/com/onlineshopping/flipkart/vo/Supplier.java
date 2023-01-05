@@ -7,9 +7,9 @@ import javax.validation.constraints.NotEmpty;
 public class Supplier {
     int supplierID;
     @NotEmpty
-    String Address;
+    String address;
     @NotEmpty
-    String City;
+    String city;
     @NotEmpty
     int postalCode;
     @NotEmpty

@@ -46,11 +46,12 @@ public class ProductService {
         }
     }
 
-    public com.onlineshopping.flipkart.entity.   Products getEntity(Products product) throws SupplierNotFoundException {
+    public com.onlineshopping.flipkart.entity.Products getEntity(Products product) {
         return com.onlineshopping.flipkart.entity.Products.builder()
                 .productName(product.getProductName())
                 .productID(product.getProductID())
                 .price(product.getPrice())
+                .productImage(product.getProductImage())
                 .supplier(suppliersRepository.findById(product.getSupplierID()).orElseThrow(()-> new SupplierNotFoundException(product.getSupplierID())))
                 .unit(product.getUnit()).build();
     }

@@ -15,5 +15,5 @@ public class Suppliers {
     @Id
     private int supplierID;
     private int postalCode;
-    private String supplierName, Address, City;
+    private String supplierName, address, city;
 }
